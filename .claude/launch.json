@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "bluxe-digital-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "bluxe-digital"],
+      "port": 5173
+    },
+    {
+      "name": "bluxe-digital-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "preview", "--prefix", "bluxe-digital"],
+      "port": 4173
+    }
+  ]
+}
