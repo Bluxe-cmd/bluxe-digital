@@ -121,8 +121,7 @@ function EcosystemCard({ product }) {
         <span className="text-2xl font-bold text-stone-900">{product.price}</span>
         <a
           href={`https://gumroad.com/l/${product.gumroadId}`}
-          target="_blank"
-          rel="noopener noreferrer"
+          data-gumroad-overlay-checkout="true"
           className="text-center bg-purple-600 text-white text-sm px-5 py-2.5 rounded-xl hover:bg-purple-700 transition-colors font-medium"
         >
           Get It Now
@@ -146,8 +145,7 @@ function ProductCard({ product }) {
       <div className="mt-auto pt-2">
         <a
           href={`https://gumroad.com/l/${product.gumroadId}`}
-          target="_blank"
-          rel="noopener noreferrer"
+          data-gumroad-overlay-checkout="true"
           className="block w-full text-center bg-purple-600 text-white text-sm px-5 py-3 rounded-xl hover:bg-purple-700 transition-colors font-medium"
         >
           Get It Now
@@ -201,8 +199,7 @@ export default function Products() {
             </div>
             <a
               href={`https://gumroad.com/l/${ecosystemBundle.gumroadId}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              data-gumroad-overlay-checkout="true"
               className="shrink-0 bg-white text-purple-700 font-bold px-8 py-3 rounded-xl hover:bg-purple-50 transition-colors text-sm"
             >
               Get the Bundle — $297
