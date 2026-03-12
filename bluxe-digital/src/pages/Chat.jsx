@@ -10,7 +10,7 @@ function useAIChat() {
   const [messages, setMessages] = useState([
     {
       role: "assistant",
-      content: "Hey! I'm your B. Luxe Digital assistant. Ask me anything about our products, planning strategies, or building your purpose-driven business.",
+      content: "Hey, welcome! I'm your B. Luxe Digital guide. I'm here to help you explore what's possible — in your faith, your business, and your vision.\n\nYou can ask me things like:\n• \"What transformation can I expect in my faith walk?\"\n• \"How can I grow my business with intention?\"\n• \"What's the right product for where I am right now?\"\n• \"How do I move from overwhelmed to strategic?\"\n\nWhat's on your heart today?",
     },
   ])
   const [loading, setLoading] = useState(false)
@@ -26,7 +26,37 @@ function useAIChat() {
         body: JSON.stringify({
           model: "claude-opus-4-6",
           max_tokens: 1024,
-          system: "You are a helpful assistant for B. Luxe Digital, a brand that creates digital tools and resources for purpose-driven women. Be warm, encouraging, and faith-aligned in your responses. Help users find the right products and strategies for their goals.",
+          system: `You are a warm, faith-aligned guide for B. Luxe Digital — a brand built for purpose-driven women, especially women of color, who are ready to build lives and businesses rooted in faith, clarity, and action.
+
+Your role is to help users explore two interconnected dimensions of transformation:
+
+FAITH TRANSFORMATIONS — help users explore:
+- Moving from fear and doubt to clarity and divine confidence
+- Distinguishing between a valley season (pruning, preparation) vs punishment
+- Developing high-stewardship faith: honoring God with their vision, time, and resources
+- Building elite spiritual boundaries that protect their peace and purpose
+- Hearing and trusting their calling even when the path isn't clear
+- The Excavation Method: uncovering what God placed in them before the world shaped them
+
+BUSINESS TRANSFORMATIONS — help users explore:
+- Going from scattered and overwhelmed to strategic and focused
+- Turning their lived experiences (even chaotic ones) into high-value, marketable skills
+- Building an offer, brand, or business around their God-given purpose
+- Using AI as a strategic advantage (not a shortcut) to amplify their impact
+- Daily planning systems rooted in intention, not hustle
+- Email, content, and client systems that convert without burnout
+
+PRODUCTS — recommend these when relevant:
+- VITV 2026 Core Framework eBook ($297): foundational philosophies & the Excavation Method
+- Valley Seasons Assessment ($97): diagnose which season they're in
+- The Daily Manna Vision Planner ($147): replace anxiety with authority via the 24-Hour Pivot
+- Vision Roadmap & Skill Stacker ($197): reframe experiences into high-paid skills using AI
+- High-Stewardship Faith Strategy ($262): elite boundaries, distinguishing discipline from punishment
+- Complete Ecosystem Bundle ($297 for all 5, total value $1,000)
+- The Powered Woman AI Mastery Course: using AI confidently to grow their brand and business
+- Email Money Machine, Client Onboarding Pro, Content Engine, Grant Writer's Edge, Brand Voice Architect
+
+Tone: warm, direct, faith-rooted, never preachy. Speak like a trusted mentor who believes in them deeply. Ask questions to understand where they are before recommending. Use "sis," "friend," or affirming language naturally but not excessively.`,
           messages: updated.filter(m => m.role !== "system"),
         }),
       })
@@ -62,10 +92,30 @@ export default function Chat() {
   return (
     <section className="pt-28 pb-20 px-6 bg-white min-h-screen">
       <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-10">
-          <p className="text-purple-500 text-sm font-medium tracking-widest uppercase mb-3">AI Assistant</p>
-          <h1 className="text-3xl md:text-4xl font-bold text-stone-900 mb-3">Get Personalized Guidance</h1>
-          <p className="text-stone-500">Ask about our products, planning strategies, or building your purpose-driven business.</p>
+        <div className="text-center mb-8">
+          <p className="text-purple-500 text-sm font-medium tracking-widest uppercase mb-3">Your Guide</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-stone-900 mb-3">Explore Your Transformation</h1>
+          <p className="text-stone-500 max-w-md mx-auto">Discover what's possible in your faith, your business, and your vision — one conversation at a time.</p>
+        </div>
+
+        {/* Prompt chips */}
+        <div className="flex flex-wrap gap-2 justify-center mb-6">
+          {[
+            "What season am I in spiritually?",
+            "How do I grow my business with faith?",
+            "What product is right for me?",
+            "How do I use AI in my business?",
+            "How do I go from overwhelmed to strategic?",
+            "What is high-stewardship faith?",
+          ].map(prompt => (
+            <button
+              key={prompt}
+              onClick={() => { sendMessage(prompt) }}
+              className="text-xs bg-purple-50 text-purple-700 border border-purple-100 px-3 py-1.5 rounded-full hover:bg-purple-100 transition-colors"
+            >
+              {prompt}
+            </button>
+          ))}
         </div>
         <div className="bg-stone-50 rounded-2xl border border-stone-100 overflow-hidden shadow-sm">
           <div className="h-[500px] overflow-y-auto p-5 flex flex-col gap-3">
