@@ -3,4 +3,4 @@
 // ============================================================
 
 // Your Cloudflare Worker URL (set up in cloudflare-worker/worker.js)
-export const WORKER_URL = "YOUR_CLOUDFLARE_WORKER_URL_HERE"
+export const WORKER_URL = "https://bluxe-digital-ai.bianca-moody26.workers.dev"
