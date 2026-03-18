@@ -139,7 +139,7 @@ Update this every Friday:
 ### Grant Management
 - Submittable (some foundations require this)
 - Fluxx (for larger foundation portals)
-- Thiink about creating a dedicated grants@equitai.org email for application submissions
+- Think about creating a dedicated grants@equitai.org email for application submissions
 
 ---
 
