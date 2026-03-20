@@ -39,3 +39,5 @@ See `../cloudflare-worker/README.md` for Worker deploy instructions.
 
 - **[Chat Feature — Full Documentation](../docs/chat-feature.md)** — How the AI chat works, Claude integration, architecture, security, and a non-technical walkthrough
 - **[Cloudflare Worker README](../cloudflare-worker/README.md)** — How to deploy and configure the API proxy
+- **[Connect GitHub to Claude](../docs/github-claude.md)** — Give Claude read-only repo context for reviews or walkthroughs
+- **[Presentation & Visual Design Cheat Sheet](../docs/presentation-design.md)** — High-fidelity deck guidelines that match the brand
