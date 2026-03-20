@@ -1,16 +1,41 @@
-# React + Vite
+# B. Luxe Digital
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Faith-Fueled Planning for Purpose-Driven Women.**
 
-Currently, two official plugins are available:
+A React + Vite product platform featuring an AI-powered chat assistant, 3D product displays, and scroll-reveal animations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- React 19 + Vite
+- Tailwind CSS 4
+- Claude AI (via Anthropic) — chat assistant
+- Cloudflare Workers — secure API proxy
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Pages
 
-## Expanding the ESLint configuration
+| Route | Description |
+|---|---|
+| `/` | Home — hero, features, CTA |
+| `/products` | Product catalogue with 3D covers and modal detail view |
+| `/about` | Brand story |
+| `/chat` | AI assistant powered by Claude |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Quick Start
+
+```bash
+npm install
+npm run dev
+```
+
+Before deploying, set your Cloudflare Worker URL in `src/config.js`:
+
+```js
+export const WORKER_URL = "https://your-worker.workers.dev"
+```
+
+See `../cloudflare-worker/README.md` for Worker deploy instructions.
+
+## Documentation
+
+- **[Chat Feature — Full Documentation](../docs/chat-feature.md)** — How the AI chat works, Claude integration, architecture, security, and a non-technical walkthrough
+- **[Cloudflare Worker README](../cloudflare-worker/README.md)** — How to deploy and configure the API proxy
