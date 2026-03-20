@@ -11,9 +11,10 @@ Use this guide to give Claude read-only context from the `Bluxe-cmd/bluxe-digita
 > If the GitHub attachment option is not visible, your account may not yet have this feature. Use Option B instead.
 
 ## Option B — Manual zip upload (works in every Claude account)
-1. From a clean working tree, generate a lightweight archive:
+1. From a clean working tree **at the repository root**, generate a lightweight archive:
    ```bash
-   git -C /home/runner/work/bluxe-digital/bluxe-digital/bluxe-digital archive --format=zip HEAD -o /tmp/bluxe-digital.zip
+   git archive --format=zip HEAD -o /tmp/bluxe-digital.zip
+   # If you're not already in the repo root, add -C /path/to/bluxe-digital
    ```
 2. Start a new Claude chat and upload `/tmp/bluxe-digital.zip` via the paperclip.
 3. Tell Claude where to start, for example:
