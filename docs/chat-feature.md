@@ -57,12 +57,12 @@ When a user visits `https://bluxedigital.com/chat`, they see:
 │  [What product is right for me?]  …more     │
 │                                              │
 │ ┌────────────────────────────────────────┐  │
-│ │ 🤖 Hey, welcome! I'm your B. Luxe     │  │
+│ │ [AI] Hey, welcome! I'm your B. Luxe   │  │
 │ │    Digital guide…                     │  │
 │ │                                        │  │
-│ │              You: [user message] 💬   │  │
+│ │              You: [user message]       │  │
 │ │                                        │  │
-│ │ 🤖 Here's what I'd suggest for you…  │  │
+│ │ [AI] Here's what I'd suggest for you… │  │
 │ └────────────────────────────────────────┘  │
 │                                              │
 │  [ Ask me anything…          ] [Send]        │
@@ -231,7 +231,7 @@ The Worker (`cloudflare-worker/worker.js`) acts as a secure relay between the br
 
 ### CORS (Cross-Origin Resource Sharing)
 
-The Worker includes CORS headers so the browser is permitted to communicate with it. In the current setup, `ALLOWED_ORIGIN` is set to `"*"` (any website). **For production**, this should be tightened to `"https://bluxedigital.com"` to prevent other websites from using the proxy.
+The Worker includes CORS headers so the browser is permitted to communicate with it. In the current setup, `ALLOWED_ORIGIN` is set to "*" (any website). **For production**, this should be tightened to "https://bluxedigital.com" to prevent other websites from using the proxy.
 
 ### Where the API key lives
 
@@ -295,7 +295,7 @@ If anything fails at any step, a friendly fallback message appears:
 | Conversation data stored without consent | No database — conversation lives only in browser memory and is lost on page refresh |
 
 **Recommended production hardening (not yet applied):**
-- Change `ALLOWED_ORIGIN` in `worker.js` from `"*"` to `"https://bluxedigital.com"`
+- Change `ALLOWED_ORIGIN` in `worker.js` from "*" to "https://bluxedigital.com"
 - Add rate limiting in the Cloudflare Worker to prevent abuse
 
 ---
