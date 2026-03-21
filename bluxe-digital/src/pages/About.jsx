@@ -1,6 +1,31 @@
 // ============================================================
 // About page — edit founder bio and brand pillars here
 // ============================================================
+import ScrollReveal from "../components/ScrollReveal"
+
+// ── Skills & Expertise ───────────────────────────────────────
+const skillCategories = [
+  {
+    icon: "◈",
+    title: "Business Strategy",
+    skills: ["Vision Mapping", "Strategic Planning", "Goal Architecture", "Business Development", "Revenue Systems"],
+  },
+  {
+    icon: "✦",
+    title: "Creative & Brand",
+    skills: ["Digital Product Design", "Brand Identity", "Content Creation", "Visual Storytelling", "Copywriting"],
+  },
+  {
+    icon: "🙏",
+    title: "Leadership & Coaching",
+    skills: ["Faith-Led Leadership", "Mindset Coaching", "Mentorship", "Community Building", "Purpose Alignment"],
+  },
+  {
+    icon: "⚡",
+    title: "Technology & Tools",
+    skills: ["AI Integration", "Digital Marketing", "Workflow Design", "Product Development", "Automation"],
+  },
+]
 
 const reasons = [
   { icon: "✦", title: "Intentionally Designed", body: "Beautiful, functional, and easy to use—because you deserve tools that actually work for you." },
@@ -38,8 +63,45 @@ export default function About() {
         </div>
       </section>
 
-      {/* Why B. Luxe */}
+      {/* Skills & Expertise */}
       <section className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <p className="text-purple-500 text-sm font-medium tracking-widest uppercase mb-3">The Expertise</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-stone-900 mb-4">Skills That Drive the Work</h2>
+              <p className="text-stone-500 max-w-2xl mx-auto">
+                Years of lived experience, intentional study, and faith-led practice—distilled into the tools and guidance we bring to every product.
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {skillCategories.map((category, i) => (
+              <ScrollReveal key={category.title} delay={i * 80}>
+                <div className="bg-stone-50 rounded-2xl p-8 h-full">
+                  <div className="flex items-center gap-3 mb-5">
+                    <span className="text-2xl" aria-hidden="true">{category.icon}</span>
+                    <h3 className="text-lg font-bold text-stone-900">{category.title}</h3>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map(skill => (
+                      <span
+                        key={skill}
+                        className="bg-white border border-purple-100 text-purple-700 text-sm font-medium px-4 py-1.5 rounded-full shadow-sm"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why B. Luxe */}
+      <section className="py-20 px-6 bg-stone-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-purple-500 text-sm font-medium tracking-widest uppercase mb-3">The Difference</p>
